@@ -7,32 +7,10 @@
 /*******************************************************************************
 * Macros
 *******************************************************************************/
-/* Macro for ADC Channel configuration*/
-#define SINGLE_CHANNEL 1
-
-#define ADC_EXAMPLE_MODE SINGLE_CHANNEL
-
 /* Channel 0 input pin */
 #define VPLUS_CHANNEL_0             (P10_1)
 
 
-/*******************************************************************************
-*       Enumerated Types
-*******************************************************************************/
-/* ADC Channel constants*/
-enum ADC_CHANNELS
-{
-  CHANNEL_0 = 0,
-  CHANNEL_1,
-  NUM_CHANNELS
-} adc_channel;
-
-//timer value
-int timer_val = 1000;
-uint8_t uart_read_value;
-
-//temperature_output_flag
-bool temperature_active_flag = true;
 /*******************************************************************************
 * Function Prototypes
 *******************************************************************************/
@@ -42,7 +20,7 @@ void adc_single_channel_init(void);
 /* Function to read input voltage from channel 0 */
 void adc_single_channel_process(_Bool);
 
-/* Function changed timer */
+/* Function change timer */
 void adc_timer_change(int);
 
 /*******************************************************************************
@@ -54,11 +32,20 @@ cyhal_adc_t adc_obj;
 /* ADC Channel 0 Object */
 cyhal_adc_channel_t adc_chan_0_obj;
 
+/* timer default 1 second value */
+int timer_val = 1000;
+
+/* read from UART */
+uint8_t uart_read_value;
+
+/* temperature flag */
+bool temperature_active_flag = true;
+
 /* Default ADC configuration */
 const cyhal_adc_config_t adc_config = {
         .continuous_scanning=false, // Continuous Scanning is disabled
         .average_count=1,           // Average count disabled
-        .vref=CYHAL_ADC_REF_VDDA,   // VREF for Single ended channel set to VDDA 
+        .vref=CYHAL_ADC_REF_VDDA,   // VREF for Single ended channel set to VDDA
         .vneg=CYHAL_ADC_VNEG_VSSA,  // VNEG for Single ended channel set to VSSA
         .resolution = 12u,          // 12-bit resolution
         .ext_vref = NC,             // No connection
@@ -71,7 +58,8 @@ const cyhal_adc_config_t adc_config = {
 * Summary:
 * This is the main function for CM4 CPU. It does...
 *    1. Configure and initialize ADC.
-*    2. Every 200ms read the input voltage and display input voltage on UART.
+*    2. Every "timer_val" read the voltage from analog pin and calculate temperature.
+*    Display temperature on UART.
 *
 * Parameters:
 *  none
@@ -142,7 +130,7 @@ int main(void)
     	               {
     	                   if (uart_read_value == 's')
     	                   {
-    	                	   printf("s pressed\r\n");
+    	                	   printf("s pressed \r\n");
 
     	                       /* Pause temperature output */
     	                       if (temperature_active_flag)
@@ -152,7 +140,7 @@ int main(void)
 
     	                       else /* Resume temperature output */
     	                       {
-    	                           printf("Temperature measure resumed\r\n");
+    	                           printf("Temperature measure resumed \r\n");
     	                       }
 
     	                       /* Move cursor to previous line */
@@ -161,11 +149,11 @@ int main(void)
     	                       temperature_active_flag ^= 1;
     	                   }
     	                   if (uart_read_value == '1'){
-    	                	   printf("time set change to 1sec \r\n");
+    	                	   printf("time set change to 1 second \r\n");
     	                	   adc_timer_change(1000);
     	                   }
     	                   if (uart_read_value == '2'){
-    	                       printf("time set change to 2sec \r\n");
+    	                       printf("time set change to 2 second \r\n");
     	                       adc_timer_change(2000);
     	                       	                   }
 
@@ -227,10 +215,11 @@ void adc_single_channel_init(void)
  *
  * Summary:
  *  ADC single channel process function. This function reads the input voltage
- *  and prints the input voltage on UART.
+ *  and calculate temperature and prints it in Celsius on UART.
+ *  Can change - print or not temperature on UART.
  *
  * Parameters:
- *  void
+ *  boolean
  *
  * Return:
  *  void
@@ -242,26 +231,39 @@ void adc_single_channel_process(_Bool fl)
 
 	    int32_t adc_result_0 = 0;
 	    adc_result_0 = cyhal_adc_read_uv(&adc_chan_0_obj)/1000;
-	    //R_tp = R2(V1 - V_out)/V_out
 
-	        float V_out = adc_result_0 ;
+
+	        float V_out = adc_result_0 ;			/* output from pin P10_1 */
 	        V_out = 3.3 - V_out/1000;
-	        float V1 = 3.3;
-	        float R_const = 10000;
-	        float R2 = R_const*(V1-V_out)/V_out;
+	        float V1 = 3.3;							/* Assume supply voltage is 3.3v */
+	        float R_const = 10000; 					/* 10k Reference Resistor */
+	        float R2 = R_const*(V1-V_out)/V_out;	/* Calculate resistance of thermistor */
 
-	        		float B = 3455;
-	        		float T1 = 298;
-	        		float R1 = 10000;
-	        		//R2 = 973;
-	        		float R_l = R1/R2;
-	        		float logR = (float)log((float)R_l);
-	        		float T2 = B*T1/(B-logR*T1);
-	        		float temperatureC = T2 - 273;
+	        float B = 3455;							/* value is a material constant which is determined by the ceramic material from which it is made */
+	        float T1 = 298;							/* is the first temperature point in Kelvin */
+	        float R_l = R_const/R2;
+	        float logR = (float)log((float)R_l);	/* log(R_const/R2) */
+	        float T2 = B*T1/(B-logR*T1);			/* the second temperature point in Kelvin */
+	        float temperatureC = T2 - 273;			/* temperature point in Celsius */
 
-	    printf("TEMPERATURE %.2f Celsius \r\n", temperatureC);
+	    printf("TEMPERATURE %.2f Celsius\r\n", temperatureC);
 		}else{}
 }
+
+/*******************************************************************************
+ * Function Name: adc_timer_change
+ *******************************************************************************
+ *
+ * Summary:
+ *  Change time reading data from P10_1.
+ *
+ * Parameters:
+ *  int
+ *
+ * Return:
+ *  void
+ *
+ *******************************************************************************/
 void adc_timer_change(int sec){
 	timer_val = sec;
 	printf("timer changed\r\n");
