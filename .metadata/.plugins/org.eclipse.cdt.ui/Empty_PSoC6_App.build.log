@@ -1,0 +1,56 @@
+15:57:20 **** Incremental Build of configuration Debug for project Empty_PSoC6_App ****
+"C:\\Users\\LenovoYoga\\ModusToolbox\\tools_2.3\\modus-shell\\bin\\make" CY_MAKE_IDE=eclipse CY_MAKE_IDE_VERSION=2.3 CY_IDE_TOOLS_DIR=C:/Users/LenovoYoga/ModusToolbox/tools_2.3 -j4 all 
+Tools Directory: C:/Users/LenovoYoga/ModusToolbox/tools_2.3
+CY8CPROTO-062-4343W.mk: ./libs/TARGET_CY8CPROTO-062-4343W/CY8CPROTO-062-4343W.mk
+"Could not find schema to validate D:/Psoc6/4343w/mtb_shared/mtb-pdl-cat1/release-v2.3.1/personalities/peripheral/sar-5.0.cypersonality against. Check the xmlns version against the ../personalities/version.xml file contents."
+"Could not find schema to validate D:/Psoc6/4343w/mtb_shared/mtb-pdl-cat1/release-v2.3.1/personalities/peripheral/saradc-2.0.cypersonality against. Check the xmlns version against the ../personalities/version.xml file contents."
+
+Prebuild operations complete
+Commencing build operations...
+
+Tools Directory: C:/Users/LenovoYoga/ModusToolbox/tools_2.3
+CY8CPROTO-062-4343W.mk: ./libs/TARGET_CY8CPROTO-062-4343W/CY8CPROTO-062-4343W.mk
+
+Initializing build: mtb-example-psoc6-empty-app Debug CY8CPROTO-062-4343W GCC_ARM
+
+Auto-discovery in progress...
+-> Found 193 .c file(s)
+-> Found 46 .S file(s)
+-> Found 22 .s file(s)
+-> Found 0 .cpp file(s)
+-> Found 0 .o file(s)
+-> Found 6 .a file(s)
+-> Found 501 .h file(s)
+-> Found 0 .hpp file(s)
+-> Found 0 resource file(s)
+Applying filters...
+Auto-discovery complete
+
+Constructing build rules...
+Build rules construction complete
+
+==============================================================================
+= Building application =
+==============================================================================
+Generating compilation database file...
+-> ./build/compile_commands.json
+Compilation database file generation complete
+Building 178 file(s)
+Compiling main.c -DCY_USING_HAL -DCY_APPNAME_mtb_example_psoc6_empty_app -DCY8C624ABZI_S2D44 -DCY_TARGET_DEVICE=CY8C624ABZI_S2D44 -DTARGET_CY8CPROTO_062_4343W -DCY_TARGET_BOARD=CY8CPROTO_062_4343W -DCOMPONENT_4343W -DCOMPONENT_BSP_DESIGN_MODUS -DCOMPONENT_CAT1 -DCOMPONENT_CAT1A -DCOMPONENT_CM0P_SLEEP -DCOMPONENT_CM4 -DCOMPONENT_CY8CPROTO_062_4343W -DCOMPONENT_HCI_UART -DCOMPONENT_MURATA_1DX -DCOMPONENT_PSOC6HAL -DCOMPONENT_SOFTFP -DDEBUG  -DCY_SUPPORTS_DEVICE_VALIDATION -I. -I../mtb_shared/capsense/release-v2.10.0 -I../mtb_shared/core-lib/release-v1.3.0 -I../mtb_shared/core-lib/release-v1.3.0/include -I../mtb_shared/mtb-hal-cat1/release-v1.6.0 -I../mtb_shared/mtb-hal-cat1/release-v1.6.0/COMPONENT_PSOC6HAL -I../mtb_shared/mtb-hal-cat1/release-v1.6.0/COMPONENT_PSOC6HAL/COMPONENT_CAT1A -I../mtb_shared/mtb-hal-cat1/release-v1.6.0/COMPONENT_PSOC6HAL/COMPONENT_CAT1A/include -I../mtb_shared/mtb-hal-cat1/release-v1.6.0/COMPONENT_PSOC6HAL/COMPONENT_CAT1A/include/pin_packages -I../mtb_shared/mtb-hal-cat1/release-v1.6.0/COMPONENT_PSOC6HAL/COMPONENT_CAT1A/include/triggers -I../mtb_shared/mtb-hal-cat1/release-v1.6.0/COMPONENT_PSOC6HAL/include -I../mtb_shared/mtb-hal-cat1/release-v1.6.0/COMPONENT_PSOC6HAL/source -I../mtb_shared/mtb-hal-cat1/release-v1.6.0/include -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1 -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1/cmsis -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1/cmsis/include -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1/devices -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1/devices/COMPONENT_CAT1A -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1/devices/COMPONENT_CAT1A/include -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1/devices/COMPONENT_CAT1A/include/ip -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1/drivers -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1/drivers/include -I../mtb_shared/retarget-io/release-v1.3.0 -I../mtb_shared/thermistor/release-v2.1.0 -I./libs -I./libs/TARGET_CY8CPROTO-062-4343W -I./libs/TARGET_CY8CPROTO-062-4343W/COMPONENT_BSP_DESIGN_MODUS -I./libs/TARGET_CY8CPROTO-062-4343W/COMPONENT_BSP_DESIGN_MODUS/GeneratedSource -I./libs/TARGET_CY8CPROTO-062-4343W/bluetooth
+In file included from ./libs/TARGET_CY8CPROTO-062-4343W/COMPONENT_BSP_DESIGN_MODUS/GeneratedSource/cycfg.h:36,
+                 from ./libs/TARGET_CY8CPROTO-062-4343W/cybsp_doc.h:27,
+                 from ./libs/TARGET_CY8CPROTO-062-4343W/cybsp_types.h:23,
+                 from ./libs/TARGET_CY8CPROTO-062-4343W/cybsp.h:30,
+                 from main.c:44:
+./libs/TARGET_CY8CPROTO-062-4343W/COMPONENT_BSP_DESIGN_MODUS/GeneratedSource/cycfg_notices.h:33:2: warning: #warning "(Library) The referenced 'device support library' contains newer content than is supported. Either downgrade the version of the 'device support library' referenced or upgrade the version of tools being used. Current library: D:/Psoc6/4343w/mtb_shared/mtb-pdl-cat1/release-v2.3.1 Current tools: C:/Users/LenovoYoga/ModusToolbox/tools_2.3" [-Wcpp]
+   33 | #warning "(Library) The referenced 'device support library' contains newer content than is supported. Either downgrade the version of the 'device support library' referenced or upgrade the version of tools being used. Current library: D:/Psoc6/4343w/mtb_shared/mtb-pdl-cat1/release-v2.3.1 Current tools: C:/Users/LenovoYoga/ModusToolbox/tools_2.3"
+      |  ^~~~~~~
+    Linking output file mtb-example-psoc6-empty-app.elf
+c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld.exe: D:/Psoc6/4343w/Empty_PSoC6_App/build/CY8CPROTO-062-4343W/Debug/tcp_client.o:D:\Psoc6\4343w\Empty_PSoC6_App/tcp_client.c:15: multiple definition of `therm_gpio_cfg'; D:/Psoc6/4343w/Empty_PSoC6_App/build/CY8CPROTO-062-4343W/Debug/main.o:D:\Psoc6\4343w\Empty_PSoC6_App/tcp_client.c:15: first defined here
+collect2.exe: error: ld returned 1 exit status
+make[1]: *** [../mtb_shared/core-make/release-v1.9.0/make/core/build.mk:529: D:/Psoc6/4343w/Empty_PSoC6_App/build/CY8CPROTO-062-4343W/Debug/mtb-example-psoc6-empty-app.elf] Error 1
+make: *** [../mtb_shared/core-make/release-v1.9.0/make/core/main.mk:434: secondstage_build] Error 2
+"C:/Users/LenovoYoga/ModusToolbox/tools_2.3/modus-shell/bin/make CY_MAKE_IDE=eclipse CY_MAKE_IDE_VERSION=2.3 CY_IDE_TOOLS_DIR=C:/Users/LenovoYoga/ModusToolbox/tools_2.3 -j4 all" terminated with exit code 2. Build might be incomplete.
+
+15:57:43 Build Failed. 3 errors, 1 warnings. (took 22s.598ms)
+

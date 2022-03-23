@@ -1,0 +1,8 @@
+15:57:10 **** Incremental Build of configuration Debug for project Thermistor ****
+"C:\\Users\\LenovoYoga\\ModusToolbox\\tools_2.3\\modus-shell\\bin\\make" CY_MAKE_IDE=eclipse CY_MAKE_IDE_VERSION=2.3 CY_IDE_TOOLS_DIR=C:/Users/LenovoYoga/ModusToolbox/tools_2.3 -j4 all 
+Tools Directory: C:/Users/LenovoYoga/ModusToolbox/tools_2.3
+C:/Users/LenovoYoga/ModusToolbox/tools_2.3/make/startex.mk:380: *** Build support for the target device not found. Run "make getlibs" to ensure all required build and code dependencies are present..  Stop.
+"C:/Users/LenovoYoga/ModusToolbox/tools_2.3/modus-shell/bin/make CY_MAKE_IDE=eclipse CY_MAKE_IDE_VERSION=2.3 CY_IDE_TOOLS_DIR=C:/Users/LenovoYoga/ModusToolbox/tools_2.3 -j4 all" terminated with exit code 2. Build might be incomplete.
+
+15:57:11 Build Failed. 1 errors, 0 warnings. (took 1s.113ms)
+

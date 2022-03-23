@@ -1,0 +1,69 @@
+22:39:03 **** Incremental Build of configuration Debug for project ThermistorPsoc6 ****
+"C:\\Users\\LenovoYoga\\ModusToolbox\\tools_2.3\\modus-shell\\bin\\make" CY_MAKE_IDE=eclipse CY_MAKE_IDE_VERSION=2.3 CY_IDE_TOOLS_DIR=C:/Users/LenovoYoga/ModusToolbox/tools_2.3 -j4 all 
+Tools Directory: C:/Users/LenovoYoga/ModusToolbox/tools_2.3
+CY8CPROTO-062-4343W.mk: ./libs/TARGET_CY8CPROTO-062-4343W/CY8CPROTO-062-4343W.mk
+"Could not find schema to validate D:/Psoc6/4343w/mtb_shared/mtb-pdl-cat1/release-v2.3.1/personalities/peripheral/sar-5.0.cypersonality against. Check the xmlns version against the ../personalities/version.xml file contents."
+"Could not find schema to validate D:/Psoc6/4343w/mtb_shared/mtb-pdl-cat1/release-v2.3.1/personalities/peripheral/saradc-2.0.cypersonality against. Check the xmlns version against the ../personalities/version.xml file contents."
+
+Prebuild operations complete
+Commencing build operations...
+
+Tools Directory: C:/Users/LenovoYoga/ModusToolbox/tools_2.3
+CY8CPROTO-062-4343W.mk: ./libs/TARGET_CY8CPROTO-062-4343W/CY8CPROTO-062-4343W.mk
+
+Initializing build: mtb-example-psoc6-adc-basic Debug CY8CPROTO-062-4343W GCC_ARM
+
+Auto-discovery in progress...
+-> Found 191 .c file(s)
+-> Found 46 .S file(s)
+-> Found 22 .s file(s)
+-> Found 0 .cpp file(s)
+-> Found 0 .o file(s)
+-> Found 6 .a file(s)
+-> Found 499 .h file(s)
+-> Found 0 .hpp file(s)
+-> Found 0 resource file(s)
+Applying filters...
+Auto-discovery complete
+
+Constructing build rules...
+Build rules construction complete
+
+==============================================================================
+= Building application =
+==============================================================================
+Generating compilation database file...
+-> ./build/compile_commands.json
+Compilation database file generation complete
+Building 176 file(s)
+==============================================================================
+= Build complete =
+==============================================================================
+
+Calculating memory consumption: CY8C624ABZI-S2D44 GCC_ARM -Og
+
+   ---------------------------------------------------- 
+  | Section Name         |  Address      |  Size       | 
+   ---------------------------------------------------- 
+  | .cy_m0p_image        |  0x10000000   |  6224       | 
+  | .text                |  0x10002000   |  52084      | 
+  | .ARM.exidx           |  0x1000eb74   |  8          | 
+  | .copy.table          |  0x1000eb7c   |  24         | 
+  | .zero.table          |  0x1000eb94   |  8          | 
+  | .data                |  0x080022e0   |  1720       | 
+  | .cy_sharedmem        |  0x08002998   |  8          | 
+  | .noinit              |  0x080029a0   |  148        | 
+  | .bss                 |  0x08002a34   |  1564       | 
+  | .heap                |  0x08003050   |  1030064    | 
+   ---------------------------------------------------- 
+
+  Total Internal Flash (Available)          2097152    
+  Total Internal Flash (Utilized)           62052      
+
+  Total Internal SRAM (Available)           1046528    
+  Total Internal SRAM (Utilized with heap)  1033504    
+
+  
+
+22:39:14 Build Finished. 0 errors, 0 warnings. (took 11s.161ms)
+

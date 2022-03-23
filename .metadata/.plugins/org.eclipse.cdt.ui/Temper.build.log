@@ -1,0 +1,33 @@
+13:40:43 **** Incremental Build of configuration Debug for project Temper ****
+make all 
+Building target: Temper.elf
+Invoking: GNU ARM Cross C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m3 -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections  -g3 -Xlinker --gc-sections -Wl,-Map,"Temper.map" -o "Temper.elf"  ./main.o   
+c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld.exe: c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-exit.o): in function `exit':
+exit.c:(.text.exit+0x16): undefined reference to `_exit'
+c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld.exe: c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-sbrkr.o): in function `_sbrk_r':
+sbrkr.c:(.text._sbrk_r+0xc): undefined reference to `_sbrk'
+c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld.exe: c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-writer.o): in function `_write_r':
+writer.c:(.text._write_r+0x12): undefined reference to `_write'
+c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld.exe: c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-closer.o): in function `_close_r':
+closer.c:(.text._close_r+0xc): undefined reference to `_close'
+c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld.exe: c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-fstatr.o): in function `_fstat_r':
+fstatr.c:(.text._fstat_r+0x12): undefined reference to `_fstat'
+c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld.exe: c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-isattyr.o): in function `_isatty_r':
+isattyr.c:(.text._isatty_r+0xc): undefined reference to `_isatty'
+c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld.exe: c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-lseekr.o): in function `_lseek_r':
+lseekr.c:(.text._lseek_r+0x12): undefined reference to `_lseek'
+c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld.exe: c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-readr.o): in function `_read_r':
+readr.c:(.text._read_r+0x12): undefined reference to `_read'
+c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld.exe: c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-abort.o): in function `abort':
+abort.c:(.text.abort+0xa): undefined reference to `_exit'
+c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld.exe: c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-signalr.o): in function `_kill_r':
+signalr.c:(.text._kill_r+0x12): undefined reference to `_kill'
+c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld.exe: c:/users/lenovoyoga/modustoolbox/tools_2.3/gcc/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libg.a(lib_a-signalr.o): in function `_getpid_r':
+signalr.c:(.text._getpid_r+0x0): undefined reference to `_getpid'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:58: Temper.elf] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+13:40:44 Build Failed. 23 errors, 0 warnings. (took 821ms)
+
