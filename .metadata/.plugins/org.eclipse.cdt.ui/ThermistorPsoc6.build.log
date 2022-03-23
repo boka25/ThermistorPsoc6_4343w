@@ -1,4 +1,4 @@
-22:39:03 **** Incremental Build of configuration Debug for project ThermistorPsoc6 ****
+00:49:31 **** Incremental Build of configuration Debug for project ThermistorPsoc6 ****
 "C:\\Users\\LenovoYoga\\ModusToolbox\\tools_2.3\\modus-shell\\bin\\make" CY_MAKE_IDE=eclipse CY_MAKE_IDE_VERSION=2.3 CY_IDE_TOOLS_DIR=C:/Users/LenovoYoga/ModusToolbox/tools_2.3 -j4 all 
 Tools Directory: C:/Users/LenovoYoga/ModusToolbox/tools_2.3
 CY8CPROTO-062-4343W.mk: ./libs/TARGET_CY8CPROTO-062-4343W/CY8CPROTO-062-4343W.mk
@@ -36,6 +36,16 @@ Generating compilation database file...
 -> ./build/compile_commands.json
 Compilation database file generation complete
 Building 176 file(s)
+Compiling main.c -DCY_USING_HAL -DCY_APPNAME_mtb_example_psoc6_adc_basic -DCY8C624ABZI_S2D44 -DCY_TARGET_DEVICE=CY8C624ABZI_S2D44 -DTARGET_CY8CPROTO_062_4343W -DCY_TARGET_BOARD=CY8CPROTO_062_4343W -DCOMPONENT_4343W -DCOMPONENT_BSP_DESIGN_MODUS -DCOMPONENT_CAT1 -DCOMPONENT_CAT1A -DCOMPONENT_CM0P_SLEEP -DCOMPONENT_CM4 -DCOMPONENT_CY8CPROTO_062_4343W -DCOMPONENT_HCI_UART -DCOMPONENT_MURATA_1DX -DCOMPONENT_PSOC6HAL -DCOMPONENT_SOFTFP -DDEBUG  -DCY_SUPPORTS_DEVICE_VALIDATION -I. -I../mtb_shared/capsense/release-v2.10.0 -I../mtb_shared/core-lib/release-v1.3.0 -I../mtb_shared/core-lib/release-v1.3.0/include -I../mtb_shared/mtb-hal-cat1/release-v1.6.0 -I../mtb_shared/mtb-hal-cat1/release-v1.6.0/COMPONENT_PSOC6HAL -I../mtb_shared/mtb-hal-cat1/release-v1.6.0/COMPONENT_PSOC6HAL/COMPONENT_CAT1A -I../mtb_shared/mtb-hal-cat1/release-v1.6.0/COMPONENT_PSOC6HAL/COMPONENT_CAT1A/include -I../mtb_shared/mtb-hal-cat1/release-v1.6.0/COMPONENT_PSOC6HAL/COMPONENT_CAT1A/include/pin_packages -I../mtb_shared/mtb-hal-cat1/release-v1.6.0/COMPONENT_PSOC6HAL/COMPONENT_CAT1A/include/triggers -I../mtb_shared/mtb-hal-cat1/release-v1.6.0/COMPONENT_PSOC6HAL/include -I../mtb_shared/mtb-hal-cat1/release-v1.6.0/COMPONENT_PSOC6HAL/source -I../mtb_shared/mtb-hal-cat1/release-v1.6.0/include -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1 -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1/cmsis -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1/cmsis/include -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1/devices -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1/devices/COMPONENT_CAT1A -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1/devices/COMPONENT_CAT1A/include -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1/devices/COMPONENT_CAT1A/include/ip -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1/drivers -I../mtb_shared/mtb-pdl-cat1/release-v2.3.1/drivers/include -I../mtb_shared/retarget-io/release-v1.3.0 -I./libs -I./libs/TARGET_CY8CPROTO-062-4343W -I./libs/TARGET_CY8CPROTO-062-4343W/COMPONENT_BSP_DESIGN_MODUS -I./libs/TARGET_CY8CPROTO-062-4343W/COMPONENT_BSP_DESIGN_MODUS/GeneratedSource -I./libs/TARGET_CY8CPROTO-062-4343W/bluetooth
+In file included from ./libs/TARGET_CY8CPROTO-062-4343W/COMPONENT_BSP_DESIGN_MODUS/GeneratedSource/cycfg.h:36,
+                 from ./libs/TARGET_CY8CPROTO-062-4343W/cybsp_doc.h:27,
+                 from ./libs/TARGET_CY8CPROTO-062-4343W/cybsp_types.h:23,
+                 from ./libs/TARGET_CY8CPROTO-062-4343W/cybsp.h:30,
+                 from main.c:3:
+./libs/TARGET_CY8CPROTO-062-4343W/COMPONENT_BSP_DESIGN_MODUS/GeneratedSource/cycfg_notices.h:33:2: warning: #warning "(Library) The referenced 'device support library' contains newer content than is supported. Either downgrade the version of the 'device support library' referenced or upgrade the version of tools being used. Current library: D:/Psoc6/4343w/mtb_shared/mtb-pdl-cat1/release-v2.3.1 Current tools: C:/Users/LenovoYoga/ModusToolbox/tools_2.3" [-Wcpp]
+   33 | #warning "(Library) The referenced 'device support library' contains newer content than is supported. Either downgrade the version of the 'device support library' referenced or upgrade the version of tools being used. Current library: D:/Psoc6/4343w/mtb_shared/mtb-pdl-cat1/release-v2.3.1 Current tools: C:/Users/LenovoYoga/ModusToolbox/tools_2.3"
+      |  ^~~~~~~
+    Linking output file mtb-example-psoc6-adc-basic.elf
 ==============================================================================
 = Build complete =
 ==============================================================================
@@ -46,24 +56,24 @@ Calculating memory consumption: CY8C624ABZI-S2D44 GCC_ARM -Og
   | Section Name         |  Address      |  Size       | 
    ---------------------------------------------------- 
   | .cy_m0p_image        |  0x10000000   |  6224       | 
-  | .text                |  0x10002000   |  52084      | 
-  | .ARM.exidx           |  0x1000eb74   |  8          | 
-  | .copy.table          |  0x1000eb7c   |  24         | 
-  | .zero.table          |  0x1000eb94   |  8          | 
+  | .text                |  0x10002000   |  52092      | 
+  | .ARM.exidx           |  0x1000eb7c   |  8          | 
+  | .copy.table          |  0x1000eb84   |  24         | 
+  | .zero.table          |  0x1000eb9c   |  8          | 
   | .data                |  0x080022e0   |  1720       | 
   | .cy_sharedmem        |  0x08002998   |  8          | 
   | .noinit              |  0x080029a0   |  148        | 
-  | .bss                 |  0x08002a34   |  1564       | 
+  | .bss                 |  0x08002a34   |  1560       | 
   | .heap                |  0x08003050   |  1030064    | 
    ---------------------------------------------------- 
 
   Total Internal Flash (Available)          2097152    
-  Total Internal Flash (Utilized)           62052      
+  Total Internal Flash (Utilized)           62060      
 
   Total Internal SRAM (Available)           1046528    
-  Total Internal SRAM (Utilized with heap)  1033504    
+  Total Internal SRAM (Utilized with heap)  1033500    
 
   
 
-22:39:14 Build Finished. 0 errors, 0 warnings. (took 11s.161ms)
+00:49:52 Build Finished. 0 errors, 1 warnings. (took 20s.801ms)
 
