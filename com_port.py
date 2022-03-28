@@ -6,10 +6,6 @@ from datetime import datetime
 
 timer = datetime.now()
 flag: bool = True #flag for stoping threadS
-#flag2: bool = True
-# unit_keyboard_switch{
-#     's':
-# }
 
 ser = serial.Serial('COM3', baudrate=115200, timeout=2) #Opening serial ports
 my_file = open("output.txt", "w")                       #Opening or create file for data write
@@ -44,25 +40,6 @@ def keyboard_listener():
         else:
             time.sleep(0)
 
-# def keyboard_switch():
-#     keyboard_input = input()
-#     while flag:
-#         match keyboard_input:
-#             case ("s"):
-#                 ser.write(b's')
-#                 time.sleep(0.5)
-#             case ("1"):
-#                 ser.write(b'1')
-#                 time.sleep(0.5)
-#             case ("2"):
-#                 ser.write(b'2')
-#                 time.sleep(0.5)
-#             case ("e"):
-#                 time.sleep(0.5)
-#             case unknown_command:
-#                 time.sleep(0)
-
-
 #Function for stop threads
 def stop_work():
     global flag
@@ -70,6 +47,10 @@ def stop_work():
         flag = False
 
 
+print("s - pause or resume command")
+print("1 - set 1 second time temperature measurement")
+print("2 - set 2 second time temperature measurement")
+print("e - exit")
 lock = threading.Lock()                                                     #The class implementing primitive lock objects
 thread_com_reader = threading.Thread(target=read_com_write_file, args=())   #Thread which read from serial
 thread_keyboard = threading.Thread(target=keyboard_listener, args=())       #Thread which read from keyboard

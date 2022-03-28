@@ -21,7 +21,7 @@ void adc_single_channel_init(void);
 void adc_single_channel_process(_Bool);
 
 /* Function change timer */
-void adc_timer_change(int);
+void adc_timer_change(int); 
 
 /*******************************************************************************
 * Global Variables
