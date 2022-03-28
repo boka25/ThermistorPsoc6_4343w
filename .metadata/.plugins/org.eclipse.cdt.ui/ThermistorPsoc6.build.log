@@ -1,4 +1,4 @@
-00:49:31 **** Incremental Build of configuration Debug for project ThermistorPsoc6 ****
+20:11:54 **** Incremental Build of configuration Debug for project ThermistorPsoc6 ****
 "C:\\Users\\LenovoYoga\\ModusToolbox\\tools_2.3\\modus-shell\\bin\\make" CY_MAKE_IDE=eclipse CY_MAKE_IDE_VERSION=2.3 CY_IDE_TOOLS_DIR=C:/Users/LenovoYoga/ModusToolbox/tools_2.3 -j4 all 
 Tools Directory: C:/Users/LenovoYoga/ModusToolbox/tools_2.3
 CY8CPROTO-062-4343W.mk: ./libs/TARGET_CY8CPROTO-062-4343W/CY8CPROTO-062-4343W.mk
@@ -56,10 +56,10 @@ Calculating memory consumption: CY8C624ABZI-S2D44 GCC_ARM -Og
   | Section Name         |  Address      |  Size       | 
    ---------------------------------------------------- 
   | .cy_m0p_image        |  0x10000000   |  6224       | 
-  | .text                |  0x10002000   |  52092      | 
-  | .ARM.exidx           |  0x1000eb7c   |  8          | 
-  | .copy.table          |  0x1000eb84   |  24         | 
-  | .zero.table          |  0x1000eb9c   |  8          | 
+  | .text                |  0x10002000   |  52036      | 
+  | .ARM.exidx           |  0x1000eb44   |  8          | 
+  | .copy.table          |  0x1000eb4c   |  24         | 
+  | .zero.table          |  0x1000eb64   |  8          | 
   | .data                |  0x080022e0   |  1720       | 
   | .cy_sharedmem        |  0x08002998   |  8          | 
   | .noinit              |  0x080029a0   |  148        | 
@@ -68,12 +68,12 @@ Calculating memory consumption: CY8C624ABZI-S2D44 GCC_ARM -Og
    ---------------------------------------------------- 
 
   Total Internal Flash (Available)          2097152    
-  Total Internal Flash (Utilized)           62060      
+  Total Internal Flash (Utilized)           62004      
 
   Total Internal SRAM (Available)           1046528    
   Total Internal SRAM (Utilized with heap)  1033500    
 
   
 
-00:49:52 Build Finished. 0 errors, 1 warnings. (took 20s.801ms)
+20:12:18 Build Finished. 0 errors, 1 warnings. (took 24s.73ms)
 

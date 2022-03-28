@@ -5,14 +5,18 @@ import serial
 from datetime import datetime
 
 timer = datetime.now()
-flag1: bool = True #flag for stoping thread which read from serial
-flag2: bool = True #flag for stoping thread which read from keyboard
+flag: bool = True #flag for stoping threadS
+#flag2: bool = True
+# unit_keyboard_switch{
+#     's':
+# }
+
 ser = serial.Serial('COM3', baudrate=115200, timeout=2) #Opening serial ports
 my_file = open("output.txt", "w")                       #Opening or create file for data write
 
 #Function for read from serial and write to file
 def read_com_write_file():
-    while flag1:
+    while flag:
         com_data = ser.readline()
 
         if com_data.decode("utf-8") == "":
@@ -25,7 +29,7 @@ def read_com_write_file():
 
 #Function for reading keyboard and send parametrs to serial port
 def keyboard_listener():
-    while flag2:
+    while flag:
         if keyboard.is_pressed("s"):##send to PSOC - 's' for stop print data to UART
             ser.write(b's')
             time.sleep(0.5)
@@ -36,18 +40,34 @@ def keyboard_listener():
             ser.write(b'2')
             time.sleep(0.5)
         elif keyboard.is_pressed("e"):#exit - stop program on python but don't stop PSOC
-            ser.write(b'e')
             stop_work()
-            break
         else:
             time.sleep(0)
 
+# def keyboard_switch():
+#     keyboard_input = input()
+#     while flag:
+#         match keyboard_input:
+#             case ("s"):
+#                 ser.write(b's')
+#                 time.sleep(0.5)
+#             case ("1"):
+#                 ser.write(b'1')
+#                 time.sleep(0.5)
+#             case ("2"):
+#                 ser.write(b'2')
+#                 time.sleep(0.5)
+#             case ("e"):
+#                 time.sleep(0.5)
+#             case unknown_command:
+#                 time.sleep(0)
+
+
 #Function for stop threads
 def stop_work():
-    global flag1, flag2
+    global flag
     with lock:
-        flag1 = False
-        flag2 = False
+        flag = False
 
 
 lock = threading.Lock()                                                     #The class implementing primitive lock objects
